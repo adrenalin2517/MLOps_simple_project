@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Train the model before running the application
-RUN python train.py
+# RUN python train.py
 
 # Expose the port that Flask will run on
 EXPOSE 5000
