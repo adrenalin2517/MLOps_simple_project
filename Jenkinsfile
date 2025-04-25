@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIAL_ID = 'mlops-jenkins-dockerhub-token'
         DOCKERHUB_REGISTRY = 'https://registry.hub.docker.com'
-        DOCKERHUB_REPOSITORY = 'iquantc/mlops-proj-01'
+        DOCKERHUB_REPOSITORY = 'olehsafronov/mlops-project-01'
     }
     stages {
         stage('Clone Repository') {
@@ -75,6 +75,7 @@ pipeline {
                 }
             }
         }
+/*        
         stage('Deploy') {
             steps {
                 // Deploy Image to Amazon ECS
@@ -85,4 +86,5 @@ pipeline {
                 }
             }
         }
+        */
     }
