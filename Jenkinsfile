@@ -28,6 +28,16 @@ pipeline {
                 }
             }
         }
+        stage('Build Model') {
+            steps {
+                script {
+                    echo 'Building Machine Learning Model...'
+                    sh "python -m pip install --break-system-packages -r requirements.txt"
+                    sh "python train.py"
+                    sh "test -f model/iris_model.pkl || { echo 'Model file model/iris_model.pkl not found!'; exit 1; }"
+                }
+            }
+        }
         stage('Test Code') {
             steps {
                 // Pytest code
@@ -43,16 +53,6 @@ pipeline {
                 script {
                     echo 'Scannning Filesystem with Trivy...'
                     sh "trivy fs ./ --format table -o trivy-fs-report.html"
-                }
-            }
-        }
-        stage('Build Model') {
-            steps {
-                script {
-                    echo 'Building Machine Learning Model...'
-                    sh "python -m pip install --break-system-packages -r requirements.txt"
-                    sh "python train.py"
-                    sh "test -f model/iris_model.pkl || { echo 'Model file model/iris_model.pkl not found!'; exit 1; }"
                 }
             }
         }
