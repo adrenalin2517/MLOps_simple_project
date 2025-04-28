@@ -113,6 +113,3 @@ The tests in `test_model.py` validate:
 - Expand test cases to cover edge cases and invalid inputs.
 - Include a `.gitignore` file to exclude generated files (e.g., `pylint-report.txt`, `model/iris_model.pkl`).
 - Add monitoring and logging for production deployments.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
