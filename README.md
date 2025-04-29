@@ -49,36 +49,6 @@ The project trains a Random Forest classifier on the Iris dataset to predict the
 - DockerHub account (for pushing images)
 - Optional: AWS ECS (for deployment, currently commented out)
 
-## Setup Instructions
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/adrenalin2517/MLOps_simple_project.git
-   cd MLOps_simple_project
-   ```
-
-2. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Train the Model**:
-   ```bash
-   python train.py
-   ```
-   This generates `model/iris_model.pkl`.
-
-4. **Run the Flask Application Locally**:
-   ```bash
-   python app.py
-   ```
-   Access the app at `http://localhost:5000`.
-
-5. **Build and Run with Docker**:
-   ```bash
-   docker build -t iris-prediction:latest .
-   docker run -p 5000:5000 iris-prediction:latest
-   ```
-
 ## Usage
 1. Open the web application at `http://localhost:5000`.
 2. Enter the Sepal Length, Sepal Width, Petal Length, and Petal Width of an Iris flower.
